@@ -43,7 +43,7 @@ Broadly,
 The data was shuffled and split into 80%-20% (train-val) subsets. The following results were obtained with barely any hyperparameter tuning (given the limitations of my current hardware)  
 1) Difference of averaged Glove + BoC, Linear SVM = 65.27% Val Accuracy, 65.09% Training Accuracy  
 2) Concatenated averaged Glove + BoC, Linear SVM = 70.7% Val Accuracy, 70.6% Training Accuracy   
-3) LSTM + FC + ReLU + FC (classifier) + Sigmoid =  78.38% Val Accuracy, 82.31% Training Accuracy   
+3) LSTM + FC + ReLU + FC (classifier) + Sigmoid =  **78.38%** Val Accuracy, 82.31% Training Accuracy   
 
 In approach 1, a sentence pair was represented as the difference of averaged Glove vectors of its words. In this approach, unknown words were represented using a Bag-of-Characters model, instead of using the unknown token in the Glove dictionary or ignoring them altogether. It is evident that Linear SVM on top of a combination of simple/off-the-shelf features is clearly underfitting the task at hand. This follows from the fact that the training and validation accuracies are about the same. It is not surprising since the model capacity is fairly low, for e.g. there is no way for the non-linear relations to be captured.  
 
