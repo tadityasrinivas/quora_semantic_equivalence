@@ -37,10 +37,8 @@ def process_sentence(in_sent):
 	out_sent = "".join(out_sent_chars) # Put them into a string
 	return out_sent
 
-# Load the dictionary of all glove words.
-# This has to be created offline from the data at https://nlp.stanford.edu/projects/glove
-# Current implementation uses the vectors pretrained on Common Crawl 42B token data 
-# The following assumes that the Pickle file contains a dictionary of the form: word -> 1-d np array
+# The following two lines assume that the pickle file contains a dictionary (set also works) of the form: glove word -> (any dummy value)
+# The dictionary will be used later, to check in O(1) if a given word belongs to the list of 1.9M Glove words.
 with open("data/all_glove1m_words.p", "rb") as f:
 	all_glove_words = cPickle.load(f)
 
