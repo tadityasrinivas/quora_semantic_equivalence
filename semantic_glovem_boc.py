@@ -79,7 +79,7 @@ for idx, curr_tuple in enumerate(data_tuples):
 	if denom != 0:
 		vec2 /= denom # Averaging
 
-	feat_matrix[curr_idx] = np.hstack((vec1, vec2, boc1, boc2)) # Why this order
+	feat_matrix[curr_idx] = np.hstack((vec1, vec2, boc1, boc2))
 	labels[curr_idx] = curr_tuple[2]
 	curr_idx += 1
 
